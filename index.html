@@ -1,9 +1,10 @@
 <html ng-app="listaTelefonica">
     <head>
         <meta charset="UTF-8">
-        <title>Lista Telefonica</title>
+        <title>Lista Telefônica</title>
         <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/ui.css">
         <script src="lib/angular/angular.js"></script>
         <script src="lib/angular/angular-messages.js"></script>
         <script src="lib/angular/angular-locale_pt-br.js"></script>
@@ -16,12 +17,16 @@
         <script src="js/config/serialGeneratorConfig.js"></script>
         <script src="js/filters/nameFilter.js"></script>
         <script src="js/filters/ellipsisFilter.js"></script>
+        <script src="js/directives/uiAlertDirective.js"></script>
 
     </head>
     <body ng-controller="listaTelefonicaCtrl">
 
         <div class="jumbotron">
             <h3>{{app}}</h3>
+
+            <ui-alert title="Ops! Aconteceu um problema.">{{error}}</ui-alert>
+
             <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
             <table ng-show="contatos.length > 0" class="table">    
                 <tr>
@@ -35,7 +40,7 @@
                 <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
                     <td><input type="checkbox" ng-model="contato.selecionado"/></td>
                     <td>{{contato.serial}}</td>
-                    <td>{{contato.nome | name | ellipsis:10}}</td>
+                    <td>{{contato.nome | name | ellipsis:20}}</td>
                     <td>{{contato.telefone}}</td>
                     <td>{{contato.operadora.nome}}</td>
                     <td>{{contato.data | date:'dd/MM/yyyy HH:mm'}}</td>
