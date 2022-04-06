@@ -19,11 +19,36 @@
         <script src="js/filters/ellipsisFilter.js"></script>
         <script src="js/directives/uiAlertDirective.js"></script>
         <script src="js/directives/uiDateDirective.js"></script>
+        <script src="js/directives/uiAccordionDirective.js"></script>
 
     </head>
     <body ng-controller="listaTelefonicaCtrl">
 
         <div class="jumbotron">
+
+            <ui-accordions>
+                <ui-accordion title="Accordion 1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis reprehenderit excepturi animi quia? Modi, tenetur est? Ad nisi quas quibusdam odio, quidem, similique architecto sunt, impedit eaque voluptatum ipsum neque!
+                </ui-accordion>
+
+                <ui-accordion title="Accordion 2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quam nemo at vero harum architecto ducimus hic perferendis quia dolor nihil, ea commodi officiis sequi, iure ex voluptatem, eius est?
+                </ui-accordion>
+
+                <ui-accordion title="Accordion 3">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium facilis minus, eaque hic earum tempora nihil ipsam expedita, delectus vitae rem mollitia aspernatur nisi atque! Quasi eius quaerat possimus natus?
+                </ui-accordion>
+
+                <ui-accordion title="Accordion 4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore incidunt ipsam praesentium, harum asperiores delectus odit, eaque reprehenderit quia hic aliquam officia accusamus animi enim sunt unde ea nostrum dignissimos.
+                </ui-accordion>
+                
+                <ui-accordion title="Accordion 5">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quidem praesentium ex fugiat repellat qui consequatur velit ratione quaerat saepe? Ex ipsum quod porro suscipit eius placeat velit reprehenderit molestias!
+                </ui-accordion>
+            </ui-accordions>
+            
+            <hr>
+
             <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
             <table ng-show="contatos.length > 0" class="table">    
                 <tr>
